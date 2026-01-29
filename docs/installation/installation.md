@@ -136,6 +136,33 @@ Status:
       Pool:        spyre_vf
 ```
 
+13. You can also check that the cards are available on the node itself by running `oc describe nodes <your node name>`, you should expect to see output similar to what's below:
+
+```bash
+Name:               worker-1
+Roles:              spyre,worker
+Labels:             beta.kubernetes.io/arch=ppc64le
+                    beta.kubernetes.io/os=linux
+...
+Capacity:
+  cpu:                            32
+  ephemeral-storage:              125364204Ki
+  hugepages-1Gi:                  0
+  hugepages-2Mi:                  0
+  ibm.com/spyre_pf:               3
+  ibm.com/spyre_pf_0302_60_00.0:  1
+  ibm.com/spyre_pf_0303_70_00.0:  1
+  ibm.com/spyre_pf_0304_80_00.0:  1
+  ibm.com/spyre_pf_tier0:         3
+  ibm.com/spyre_pf_tier1:         3
+  ibm.com/spyre_pf_tier2:         3
+  memory:                         33138944Ki
+  pods:                           250
+...
+```
+
+This is an example from a worker node which had 3 cards installed, in the PCIe addresses `0302_60_00.0`, `0303_70_00.0`, and `0304_80_00.0`.
+
 > **Note:** Only create one **SpyreClusterPolicy** in the entire Red Hat OpenShift cluster.
 
 ## Deploying the Spyre Operator manually through CLI

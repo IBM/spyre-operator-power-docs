@@ -15,6 +15,12 @@ Using the Power Hardware Management Console (HMC), attach the PCI devices to you
 7. From the popout, select the Spyre Adaptor(s) you wish to attach to the worker node/LPAR, and click **ok**.
 8. On the partition detail page, click the **save** button
 
+Once saved, it will be valuable to double-check that the cards were attached to the LPAR correctly, by running the following steps:
+
+1. Create an SSH connection to your bastion node
+2. From your bastion, SSH to the worker node `ssh core@<worker node name>`
+3. Run `LSPCI` and confirm that the PCIe cards are present.
+
 ## Parent topic:
 
 [Prerequisites on Red Hat OpenShift using OperatorHub](prerequisites.md)

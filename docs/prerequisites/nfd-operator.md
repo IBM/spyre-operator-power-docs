@@ -152,6 +152,9 @@ spec:
 
 ```
 
+> **NOTE:** in the `spec.operand.image`, the image tag *needs to match the OCP version that your cluster is running*
+
+
 ## Parent topic:
 
 [Prerequisites on Red Hat OpenShift using OperatorHub](prerequisites.md)

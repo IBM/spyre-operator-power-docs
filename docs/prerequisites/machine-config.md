@@ -276,8 +276,16 @@ oc apply -f 50-spyre-device-plugin-selinux-minimal.yaml
 Once the machine configs are applied, monitor the status by running following command,ensure that the UPDATED value is True and UPDATING value is False.
 
 ```bash
-# oc get mcp worker
+oc get mcp worker
 ```
+
+All of the worker nodes with the `spyre` label will be updated 1-by-1, you can monitor the progress by running the following command:
+
+```bash
+oc get nodes --watch
+```
+
+You will see the node of each spyre node go to `Ready,SchedulingDisabled` -> `NotReady,SchedulingDisabled` -> `Ready,SchedulingDisabled` -> `Ready`. Once all worker nodes have reached the `Ready` state after applying the machin configs, you can proceed to complete the remaining prerequisites, and then install the operator.
 
 > **Note:**
 > - When applying machine config compute nodes become unschedulable.

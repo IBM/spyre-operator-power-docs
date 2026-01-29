@@ -28,6 +28,12 @@ To install the Secondary Scheduler Operator for Red Hat OpenShift, use the web c
 4. Navigate to **Operators >Installed Operators**
 5. Verify that the **Secondary Scheduler Operator for Red Hat OpenShift** is listed with a **Status** of **Succeeded**
 
+> NOTE: You *may* need to create the appropriate namespace for the secondary scheduler operator installation. If the namespace `openshift-secondary-scheduler-operator` is not present, you will have to create the namespace with the following command before the installation:
+
+```bash
+oc create namespace openshift-secondary-scheduler-operator
+```
+
 ## Parent topic:
 
 [Prerequisites on Red Hat OpenShift using OperatorHub](prerequisites.md)
