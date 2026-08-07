@@ -29,7 +29,7 @@ Ensures that user workloads and cluster policies are valid. Blocks faulty deploy
 
 Pods request Spyre resources that use resource limits. The operator and the scheduler handle placement and allocation.
 
-*Figure 1. Architecture Overview*
+*Figure 1. Architecture overview of how the Spyre Operator connects your AI workloads to the Spyre accelerator cards installed on worker nodes.*
 
 ![Spyre Operator Architectural Overview](../../assets/images/spyre-operator-overview.png)
 

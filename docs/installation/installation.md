@@ -69,12 +69,12 @@ spec:
 | spec.cardManagement | object | Card management component configuration | Not Supported for s390x |
 | spec.experimentalMode | []enum | Experimental features to enable. Options: `perDeviceAllocation` (specify devices by PCI address), `topologyAwareAllocation` (policy-based allocation), `externalDeviceReservation` (use scheduler for reservation) | - |
 | spec.loglevel | enum | Operator log level: debug, info, or error | info |
-| spec.metricsExporter | object | Metrics exporter component configuration | NOt supported for s390x |
+| spec.metricsExporter | object | Metrics exporter component configuration | Not supported for s390x |
 | spec.skipUpdateComponents | []string | Components skip updating if already deployed. Options: commonInit, devicePlugin, cardManagement, metricsExporter, scheduler, podValidator | - |
 
-> **Note:**
-> - Only one **SpyreClusterPolicy** resource should exist per cluster.
-> - Device plug-in pod (DaemonSet) is scheduled on all nodes where spyre cards are attached.
+**Note:**
+- Only one **SpyreClusterPolicy** resource should exist per cluster.
+- Device plug-in pod (DaemonSet) is scheduled on all nodes where spyre cards are attached.
 
 9. Once the **SpyreClusterPolicy** changes are done, if any, click **Create**.
 10. Check if the **SpyreClusterPolicy** is ready.
@@ -163,11 +163,11 @@ Capacity:
 
 This is an example from a worker node which had 3 cards installed, in the PCIe addresses `0302_60_00.0`, `0303_70_00.0`, and `0304_80_00.0`.
 
-> **Note:** Only create one **SpyreClusterPolicy** in the entire Red Hat OpenShift cluster.
+**Note:** Only create one **SpyreClusterPolicy** in the entire Red Hat OpenShift cluster.
 
 ## Deploying the Spyre Operator manually through CLI
 
-> **Note:** This is an optional step to install the Spyre Operator in case the RHOCP OperatorHub is not used for installation. The Spyre Operator is a part of certified operators; you have to enable certified-operators, before installation.
+**Note:** This is an optional step to install the Spyre Operator in case the RHOCP OperatorHub is not used for installation. The Spyre Operator is a part of certified operators; you have to enable certified-operators, before installation.
 
 1. Create a YAML file of kind `OperatorGroup`, that is similar to the following example:
 

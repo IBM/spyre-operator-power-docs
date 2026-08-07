@@ -12,16 +12,14 @@ The cert-manager Operator for Red Hat OpenShift is a cluster-wide service that a
 4. Select the **cert-manager Operator for Red Hat OpenShift**.
 5. Select the cert-manager Operator for Red Hat OpenShift version from **Version** drop-down list, and click **Install**.
 6. On the **Install Operator** page:
-   a. Update the **Update channel**, if necessary. The channel defaults to **stable-v1**, which installs the latest stable release of the cert-manager Operator for Red Hat OpenShift.
-   b. Choose the **Installed Namespace** for the Operator. The default Operator namespace is `cert-manager-operator`
-      If the `cert-manager-operator` namespace does not exist, it is created for you
+   - Update the **Update channel**, if necessary. The channel defaults to **stable-v1**, which installs the latest stable release of the cert-manager Operator for Red Hat OpenShift.
+   - Choose the **Installed Namespace** for the Operator. The default Operator namespace is `cert-manager-operator`. If the `cert-manager-operator` namespace does not exist, it is created for you.
+   - Select an **Update approval** strategy.
+   - Click **Install**.
+      - The **Automatic** strategy allows Operator Lifecycle Manager (OLM) to automatically update the Operator when a new version is available.
+      - The **Manual** strategy requires a user with appropriate credentials to approve the Operator update.
 
-> **Note:** During the installation, the Red Hat OpenShift web console allows you to select between `AllNamespaces` and `SingleNamespace` installation modes. For installations with cert-manager Operator for Red Hat OpenShift version 1.15.0 or later, it is recommended to choose the `AllNamespaces` installation mode. `SingleNamespace` and `OwnNamespace` support will remain for earlier versions but will be deprecated in future versions.
-
-   c. Select an **Update approval** strategy.
-   d. Click **Install**
-      - The **Automatic** strategy allows Operator Lifecycle Manager (OLM) to automatically update the Operator when a new version is available
-      - The **Manual** strategy requires a user with appropriate credentials to approve the Operator update
+**Note:** During the installation, the Red Hat OpenShift web console allows you to select between `AllNamespaces` and `SingleNamespace` installation modes. For installations with cert-manager Operator for Red Hat OpenShift version 1.15.0 or later, it is recommended to choose the `AllNamespaces` installation mode. `SingleNamespace` and `OwnNamespace` support will remain for earlier versions but will be deprecated in future versions.
 
 7. Navigate to **Operators >Installed Operators**
 8. Verify that **CertManager Operator for Red Hat OpenShift** is listed with a **Status** of **Succeeded** in the `cert-manager-operator` namespace
@@ -40,7 +38,7 @@ cert-manager-cainjector-5bcc5f9868-7g927   1/1     Running   0          4m5s
 cert-manager-webhook-d4479d7f7-9dg9W       1/1     Running   0          4m9s
 ```
 
-> **Note:** You can use the cert-manager Operator for Red Hat OpenShift only after cert-manager pods are up and running.
+**Note:** You can use the cert-manager Operator for Red Hat OpenShift only after cert-manager pods are up and running.
 
 ## Parent topic:
 

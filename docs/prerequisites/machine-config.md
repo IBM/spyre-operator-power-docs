@@ -4,7 +4,7 @@
 
 The applied machine configuration performs a set up on the compute node where cards are attached.
 
-> **Note:** If you apply a MachineConfig to the **worker** role it is applied to all compute nodes, and each affected node is rebooted, including the compute node with the Spyre card attached. To avoid impacting workloads on other compute nodes, assign a dedicated role to the compute node with the Spyre card attached. Create a separate MachineConfigPool (MCP) for that role, and set the `machineconfiguration.openshift.io/role` label in your MachineConfig. This ensures that configuration changes and reboots apply only to the compute node with the Spyre card attached.
+**Note:** If you apply a MachineConfig to the **worker** role it is applied to all compute nodes, and each affected node is rebooted, including the compute node with the Spyre card attached. To avoid impacting workloads on other compute nodes, assign a dedicated role to the compute node with the Spyre card attached. Create a separate MachineConfigPool (MCP) for that role, and set the `machineconfiguration.openshift.io/role` label in your MachineConfig. This ensures that configuration changes and reboots apply only to the compute node with the Spyre card attached.
 
 ## Label the compute node
 
@@ -16,7 +16,7 @@ Label the compute nodes with attached spyre cards by using the spyre role. This 
 oc label node <node-name> node-role.kubernetes.io/spyre=''
 ```
 
-> **Note:** Replace the `<node-name>` with the actual name of your compute node.
+**Note:** Replace the `<node-name>` with the actual name of your compute node.
 
 2. Verify whether the label is applied correctly by running the following command:
 
@@ -184,7 +184,7 @@ spec:
 
 ```
 
-## Apply SELinux Policy (for Spyre Operator version above 1.1.0)
+## Apply SELinux Policy (for Spyre Operator version 1.1.1 and later)
 
 You must apply the SELinux policy MachineConfig for the device plug-in to work properly from the root of the aiu-operator repository.
 
@@ -287,13 +287,13 @@ oc get nodes --watch
 
 You will see the node of each spyre node go to `Ready,SchedulingDisabled` -> `NotReady,SchedulingDisabled` -> `Ready,SchedulingDisabled` -> `Ready`. Once all worker nodes have reached the `Ready` state after applying the machin configs, you can proceed to complete the remaining prerequisites, and then install the operator.
 
-> **Note:**
-> - When applying machine config compute nodes become unschedulable.
-> - You can taint the compute node by running the following command:
->
-> ```bash
-> oc adm taint nodes <node-name> ibm.com/spyre=:NoSchedule
-> ```
+**Note:**
+- When applying machine config compute nodes become unschedulable.
+- You can taint the compute node by running the following command:
+
+```bash
+oc adm taint nodes <node-name> ibm.com/spyre=:NoSchedule
+```
 
 ## Parent topic:
 
