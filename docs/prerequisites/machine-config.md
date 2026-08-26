@@ -1,6 +1,6 @@
 # Configure the MachineConfig
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 The applied machine configuration performs a set up on the compute node where cards are attached.
 

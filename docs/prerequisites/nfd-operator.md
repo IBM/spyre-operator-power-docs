@@ -1,6 +1,6 @@
 # Node Feature Discovery (NFD) Operator
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 The Node Feature Discovery (NFD) Operator is a Red Hat OpenShift Operator that automates the detection of hardware features and system configurations across cluster nodes.
 
