@@ -12,7 +12,7 @@ This table describes on the prerequisites on Red Hat OpenShift using OperatorHub
 | cert- Manager Operator for Red Hat OpenShift | Mandatory |
 | Secondary Scheduler Operator | Mandatory |
 
-> **Note:** The following sections describe how to install the Red Hat Operators.
+**Note:** The following sections describe how to install the Red Hat Operators.
 
 ## [Node Feature Discovery (NFD) Operator](nfd-operator.md)
 

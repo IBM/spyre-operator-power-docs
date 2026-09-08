@@ -4,7 +4,7 @@
 
 The Spyre Operator allows users and cluster administrators to configure Spyre in Red Hat OpenShift. It works as a centralized one-stop operator that coordinates many essential components, which can hide the complexity of the Spyre enablement processes in the cluster. The operator ensures that pods are scheduled to nodes with available Spyre devices and manages device allocation at runtime.
 
-> **Note:** To use the Spyre Accelerator in an Red Hat OpenShift AI workflow, the Spyre Operator must be installed from the Operator Hub within the Red Hat OpenShift cluster. You must create an accelerator profile to expose the resources to workloads.
+**Note:** To use the Spyre Accelerator in an Red Hat OpenShift AI workflow, the Spyre Operator must be installed from the Operator Hub within the Red Hat OpenShift cluster. You must create an accelerator profile to expose the resources to workloads.
 
 ## Contents
 
