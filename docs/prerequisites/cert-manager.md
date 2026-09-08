@@ -1,6 +1,6 @@
 # cert-manager Operator for Red Hat OpenShift
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 The cert-manager Operator for Red Hat OpenShift is a cluster-wide service that automates application certificate lifecycle management.
 

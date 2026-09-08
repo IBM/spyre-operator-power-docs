@@ -1,6 +1,6 @@
 # Installing the Spyre Operator
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 The Spyre Operator helps your cluster run AI workloads more efficiently. It improves scheduling, manages resources, works with Spyre operators to optimize spyre use, supports AI pipelines, and integrates with IBM AI services.
 

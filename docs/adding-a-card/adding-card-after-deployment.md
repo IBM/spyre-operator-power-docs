@@ -1,6 +1,6 @@
 # Adding a card after deployment
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 Once the new Spyre cards are attached and the operator is deployed, perform the following steps:
 

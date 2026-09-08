@@ -1,6 +1,6 @@
 # Introduction to the Spyre Operator
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 The Spyre Operator allows users and cluster administrators to configure Spyre in Red Hat OpenShift. It works as a centralized one-stop operator that coordinates many essential components, which can hide the complexity of the Spyre enablement processes in the cluster. The operator ensures that pods are scheduled to nodes with available Spyre devices and manages device allocation at runtime.
 

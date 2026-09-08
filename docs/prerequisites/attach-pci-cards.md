@@ -1,6 +1,6 @@
 # Attach PCI cards to LPAR in HMC
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 Using the Power Hardware Management Console (HMC), attach the PCI devices to your LPAR
 

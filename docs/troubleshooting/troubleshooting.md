@@ -1,6 +1,6 @@
 # Troubleshooting
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 This section presents a list of issues that could be encountered during the operation of the Spyre Operator.
 

@@ -1,6 +1,6 @@
 # Key components
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 The Spyre operator manages the full lifecycle of Spyre related components, which includes:
 

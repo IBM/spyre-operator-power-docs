@@ -1,6 +1,6 @@
 # Spyre Operator for IBM Power User's Guide
 
-**Last Updated:** 2026-01-22
+*Last Updated: 2026-01-22*
 
 This document provides an overview of the Spyre Operator for IBM Power. You will learn how to set up and configure the necessary software stack to make the Spyre Accelerators available to AI workloads that run on Red Hat OpenShift.
 
