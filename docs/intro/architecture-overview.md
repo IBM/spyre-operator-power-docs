@@ -31,7 +31,7 @@ Pods request Spyre resources that use resource limits. The operator and the sche
 
 *Figure 1. Architecture overview of how the Spyre Operator connects your AI workloads to the Spyre accelerator cards installed on worker nodes.*
 
-![Spyre Operator Architectural Overview](../../assets/images/spyre-operator-overview.png)
+![Architectural overview diagram with four sections connected by arrows. Left: a Deployment pod spec (YAML) requesting ibm.com/spyre_vf: 1 via resource limits, using spyre-scheduler. Center-top: Control Plane Pods containing Spyre Controller, Spyre Scheduler, and Validation Webhook — receiving a Deploy arrow from the pod spec and sending a Scheduling arrow right. Right: a Worker Node stack containing User Deployments (e2e and vLLM pods), Metrics Exporter, Device Plugin, and three Spyre accelerator cards at the bottom. Center-bottom: a Cluster Policy CR (SpyreClusterPolicy YAML) with podValidator, scheduler, and devicePlugin fields — connected upward via a Refer arrow to the Control Plane Pods. Bottom-right: Node State CRs (SpyreNodeState YAML) showing nodeName, spyreInterfaces with PCI addresses and health status, and allocatedSpyreInterfaces — connected to the Worker Node via a two-way sync arrow.](../../assets/images/spyre-operator-overview.png)
 
 ## Parent topic:
 
