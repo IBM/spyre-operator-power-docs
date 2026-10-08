@@ -49,6 +49,96 @@ If you have enough resources in the cluster consider increasing the operator dep
 - Use `Deployment` instead of Pod to deploy your application (recommended).
 - If you choose to use Pod, manually retry the deployment after a few minutes.
 
+### Metrics collection tools aiu-smi and Spyre operator dashboard do not show any data
+Metrics collection has a known issue which is that the UID of the metrics-exporter and worker pods differ because of which the worker pod fails to write to the metrics file read by the metrics-exporter. Follow the below workaround to start the workload pod with the same UID as the metrics-exporter (which is UID 1001). With these steps, both aiu-smi and the Spyre operator dashboard will show metrics.
+1. Create a new SCC that pins UID 1001
+Requires cluster-admin access. To be run once per namespace.
+```bash
+cat <<'EOF' | oc create -f -
+apiVersion: security.openshift.io/v1
+kind: SecurityContextConstraints
+metadata:
+  name: restricted-1001-uid
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: false
+allowPrivilegedContainer: false
+allowedCapabilities:
+- NET_BIND_SERVICE
+defaultAddCapabilities: null
+fsGroup:
+  type: MustRunAs
+readOnlyRootFilesystem: false
+requiredDropCapabilities:
+- ALL
+runAsUser:
+  type: MustRunAsRange
+  uidRangeMin: 1001
+  uidRangeMax: 1001
+seLinuxContext:
+  type: MustRunAs
+seccompProfiles:
+- runtime/default
+volumes:
+- configMap
+- csi
+- downwardAPI
+- emptyDir
+- ephemeral
+- image
+- persistentVolumeClaim
+- projected
+- secret
+EOF
+```
+
+2. Bind the SCC to the InferenceService's service account
+Requires cluster-admin access. To be run once per namespace.
+```bash
+# Find the service account
+oc get inferenceservice <name> -n <project> \
+  -o jsonpath='{.spec.predictor.serviceAccountName}'
+
+# Bind the SCC
+oc adm policy add-scc-to-user restricted-1001-uid \
+  -z <serviceAccount> -n <project>
+```
+
+3. Patch the ServingRuntime to request UID 1001
+Requires project admin access. To be run once per ServingRuntime.
+```bash
+oc patch servingruntime <name> -n <project> --type=json -p='[
+  {
+    "op": "add",
+    "path": "/spec/containers/0/securityContext",
+    "value": {
+      "runAsUser": 1001,
+      "runAsNonRoot": true,
+      "allowPrivilegeEscalation": false,
+      "capabilities": {"drop": ["ALL"]}
+    }
+  }
+]'
+```
+This change takes effect for every new pod started from this runtime — no per-pod action needed.
+
+4. After the next pod restart, verify by checking that the running container uses UID 1001:
+```bash
+# Check runAsUser in the running pod
+oc get pod -n <project> \
+  -l serving.kserve.io/inferenceservice=<name> \
+  -o jsonpath='{.items[0].spec.containers[?(@.name=="kserve-container")].securityContext}'
+
+# Confirm the SCC that was granted at admission
+oc get pod -n <project> \
+  -l serving.kserve.io/inferenceservice=<name> \
+  -o jsonpath='{.items[0].metadata.annotations.openshift\.io/scc}'
+```
+Expected ouput: `runAsUser` is `1001` and the SCC annotation shows `restricted-1001-uid`.
+
 ## Parent topic:
 
 [Spyre Operator for IBM Power User's Guide](../../README.md)
