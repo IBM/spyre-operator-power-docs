@@ -1,7 +1,5 @@
 # Troubleshooting
 
-*Last Updated: 2026-01-22*
-
 This section presents a list of issues that could be encountered during the operation of the Spyre Operator.
 
 ## Known issues
@@ -50,7 +48,7 @@ If you have enough resources in the cluster consider increasing the operator dep
 - If you choose to use Pod, manually retry the deployment after a few minutes.
 
 ### Metrics collection tools aiu-smi and Spyre operator dashboard do not show any data
-Metrics collection has a known issue which is that the UID of the metrics-exporter and worker pods differ because of which the worker pod fails to write to the metrics file read by the metrics-exporter. Follow the below workaround to start the workload pod with the same UID as the metrics-exporter (which is UID 1001). With these steps, both aiu-smi and the Spyre operator dashboard will show metrics.
+Metrics collection has a known issue which is that the UID of the metrics-exporter and worker pods differ because of which the worker pod fails to write to the metrics file read by the metrics-exporter. Follow the following workaround to start the workload pod with the same UID as the metrics-exporter (which is UID 1001). With these steps, both aiu-smi and the Spyre operator dashboard will show metrics.
 1. Create a new SCC that pins UID 1001
 Requires cluster-admin access. To be run once per namespace.
 ```bash

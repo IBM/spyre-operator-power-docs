@@ -1,7 +1,5 @@
 # Prerequisites on Red Hat OpenShift using OperatorHub
 
-*Last Updated: 2026-01-22*
-
 This table describes on the prerequisites on Red Hat OpenShift using OperatorHub.
 
 ## Table 1. Prerequisites on Red Hat OpenShift

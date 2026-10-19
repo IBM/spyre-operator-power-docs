@@ -1,7 +1,5 @@
 # Installing the Spyre Operator
 
-*Last Updated: 2026-01-22*
-
 The Spyre Operator helps your cluster run AI workloads more efficiently. It improves scheduling, manages resources, works with Spyre operators to optimize spyre use, supports AI pipelines, and integrates with IBM AI services.
 
 1. Search The `Spyre Operator` on the OperatorHub page in the Red Hat OpenShift Web Console.
@@ -136,7 +134,7 @@ Status:
       Pool:        spyre_vf
 ```
 
-13. You can also check that the cards are available on the node itself by running `oc describe nodes <your node name>`, you should expect to see output similar to what's below:
+13. You can also check that the cards are available on the node itself by running `oc describe nodes <your node name>`, you should expect to see output similar to the following:
 
 ```bash
 Name:               worker-1

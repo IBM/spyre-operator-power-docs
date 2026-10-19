@@ -1,7 +1,5 @@
 # Secondary Scheduler Operator
 
-*Last Updated: 2026-01-22*
-
 The Secondary Scheduler Operator allows you to deploy a custom scheduler alongside the default Red Hat OpenShift scheduler.
 
 To install the Secondary Scheduler Operator for Red Hat OpenShift, use the web console.
