@@ -1,7 +1,5 @@
 # Hardware and software requirements
 
-*Last Updated: 2025-12-11*
-
 Before you deploy the Spyre Operator on IBM Power systems for standard mode environments, you must meet the specific hardware and software prerequisites to ensure compatibility, stability, and performance. The following information details the hardware and software requirements necessary to support the operator.
 
 ## Table 1. Hardware requirements (supported platforms)

@@ -1,7 +1,5 @@
 # Configure the MachineConfig
 
-*Last Updated: 2026-01-22*
-
 The applied machine configuration performs a set up on the compute node where cards are attached.
 
 **Note:** If you apply a MachineConfig to the **worker** role it is applied to all compute nodes, and each affected node is rebooted, including the compute node with the Spyre card attached. To avoid impacting workloads on other compute nodes, assign a dedicated role to the compute node with the Spyre card attached. Create a separate MachineConfigPool (MCP) for that role, and set the `machineconfiguration.openshift.io/role` label in your MachineConfig. This ensures that configuration changes and reboots apply only to the compute node with the Spyre card attached.

@@ -1,7 +1,5 @@
 # Adding a card after deployment
 
-*Last Updated: 2026-01-22*
-
 Once the new Spyre cards are attached and the operator is deployed, perform the following steps:
 
 ## Procedure
@@ -13,7 +11,7 @@ Once the new Spyre cards are attached and the operator is deployed, perform the 
 spec.devicePlugin.initContainer.executePolicy: Always
 ```
 
-3. Remove the existing `SpyreClusterPolicy` and redeploy it with the updated value provided below:
+3. Remove the existing `SpyreClusterPolicy` and redeploy it with the following updated value:
 
 ```
 spec.devicePlugin.initContainer.executePolicy: IfNotPresent

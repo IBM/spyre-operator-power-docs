@@ -1,7 +1,5 @@
 # Architecture overview
 
-*Last Updated: 2026-01-22*
-
 This section provides the architectural overview of the Spyre Operator.
 
 ## The Spyre Operator

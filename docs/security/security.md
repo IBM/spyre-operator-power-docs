@@ -1,7 +1,5 @@
 # Security Advisory
 
-*Last Updated: 2026-01-28*
-
 ## General Security Advisory
 
 The Spyre Operator for Power does not provide additional security features to an existing OCP cluster. In order to fully ensure that your environment is secure, please refer to the Openshift Container Platform documentation on best practices to secure your cluster:

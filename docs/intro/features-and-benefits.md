@@ -1,7 +1,5 @@
 # Features and benefits
 
-*Last Updated: 2026-01-22*
-
 The Spyre Operator has the following key features and benefits:
 
 ## Device management and allocation
